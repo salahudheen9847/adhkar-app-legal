@@ -90,7 +90,7 @@
     <h2>1. Information We Collect</h2>
 
     <h3>A. Account Information (Authentication)</h3>
-    <p>When you choose to sign in to Al-Bader (for example, to post advertisements or manage community listings), we authenticate your account using <strong>Google Sign-In / Firebase Authentication</strong>. We collect:</p>
+    <p>When you choose to sign in to Al-Bader (for example, to post advertisements or manage community listings), we authenticate your account using <strong>Google Sign-In on Android, Apple Sign-In on iOS, and Firebase Authentication</strong>. We collect:</p>
     <ul>
         <li>Your basic profile name and email address</li>
         <li>Your profile picture URL</li>
@@ -109,6 +109,9 @@
     <h3>C. Automatically Processed Information</h3>
     <p>To ensure app stability and optimal performance, we collect standard device metrics (such as device model, OS version, and network status). We do not collect or track Advertising Identifiers (IDFA / GAID).</p>
 
+    <h3>D. Alarms, Reminders & Local Preferences</h3>
+    <p>When you set up custom alarms (such as Tahajjud, Suhur, or personalized reminders) or configure prayer notification preferences, all associated settings—including alarm title, trigger times, recurrence days, and chosen audio sounds (Adhan or beep)—are stored <strong>strictly locally on your device</strong> (using local storage). This data is never transmitted to our servers, backed up to third-party clouds, or shared with external parties.</p>
+
     <h2>2. Multimedia Streaming & External Content Delivery</h2>
     <p>Al-Bader provides access to external Islamic multimedia content, including <strong>Islamic Status Videos, Audio Recitations (Adhkar, Surahs), and Live Islamic Radio Streams</strong>:</p>
     <ul>
@@ -121,10 +124,10 @@
     <h2>3. Device Permissions & How They Are Used</h2>
     <p>Al-Bader requests specific device permissions solely to provide features you explicitly activate:</p>
     <ul>
-        <li><strong>Location (GPS):</strong> Used on your device to calculate accurate local prayer times (via astronomical calculations), compute the exact Qibla compass direction, and display nearby historical Ziyarath pilgrimage sites. Location coordinates are processed locally on your device and are never tracked in the background or sold.</li>
+        <li><strong>Location (GPS - When In Use):</strong> Used solely while using the app (Foreground / "When In Use") to calculate local prayer timetables, indicate the Qibla direction, and show nearby masjids and Ziyarath sites. <em>We do not request, require, or run background ("Always") location services.</em> When calculating prayer times for GPS-detected coordinates, your approximate latitude and longitude are transmitted securely via encrypted HTTPS to the AlAdhan API to fetch astronomical prayer times; AlAdhan processes these coordinates in real-time without storing user identity or profiling. When you search for nearby masjids, coordinates are queried against OpenStreetMap Overpass or Photon services. Your location is never tracked in the background, logged permanently, or sold to third parties.</li>
         <li><strong>Camera:</strong> Used exclusively when you open the built-in QR Scanner to scan Al-Bader QR codes. The camera stream is analyzed on-device in real time and is never recorded, saved, or uploaded.</li>
         <li><strong>Photos / Photo Library:</strong> Used only when you select and attach an image to a Buy & Sell listing or community posting. We never access your photo library without your explicit selection.</li>
-        <li><strong>Notifications:</strong> Used to deliver timely prayer time alerts (Adhan), daily morning/evening dhikr reminders, and community status updates. You can enable or disable notifications at any time in device settings.</li>
+        <li><strong>Notifications & Alarms (Alerts & Sounds):</strong> Used to deliver timely prayer time alerts (Adhan / Baank), user-defined Islamic custom alarms (Tahajjud, Suhur), and daily morning/evening dhikr reminders. On iOS and Android, notifications require your explicit permission to present alerts, display banners, and play audio. Audio files (such as the Adhan or alarm tone) are bundled locally within the application and played directly on your device. You can customize audio tones, adjust notification timings, or disable notifications entirely at any time in the app settings or system settings.</li>
     </ul>
 
     <h2>4. In-App Purchases & Subscriptions</h2>
@@ -145,9 +148,11 @@
     <p>We utilize trusted third-party cloud infrastructure to operate the application:</p>
     <ul>
         <li><strong>Google Firebase (Authentication & Cloud Firestore):</strong> For secure user login and storing community posts.</li>
+        <li><strong>Apple Sign-In:</strong> For optional account authentication on iOS.</li>
+        <li><strong>OpenStreetMap Overpass and Photon:</strong> For nearby masjid search results when you request them.</li>
         <li><strong>RevenueCat:</strong> For verifying digital receipt entitlements.</li>
         <li><strong>Cloudflare R2 & Workers:</strong> For high-performance media delivery and video streaming.</li>
-        <li><strong>AlAdhan API:</strong> For astronomical prayer time calculations.</li>
+        <li><strong>AlAdhan API (Islamic Network):</strong> For astronomical prayer time calculations. Receives latitude and longitude coordinates over HTTPS to return accurate prayer schedules. No user accounts, personal identities, or tracking tokens are sent.</li>
     </ul>
 
     <h2>7. Account & Data Deletion (User Rights)</h2>
