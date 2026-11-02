@@ -81,7 +81,7 @@
 
     <div class="meta-box">
         <strong>App Name:</strong> Al-Bader (Adhkar App)<br>
-        <strong>Effective Date:</strong> November 1, 2026<br>
+        <strong>Effective Date:</strong> November 2, 2026<br>
         <strong>Developer Contact:</strong> <a href="mailto:salahudheen9745@gmail.com">salahudheen9745@gmail.com</a>
     </div>
 
@@ -90,32 +90,39 @@
     <h2>1. Information We Collect</h2>
 
     <h3>A. Account Information (Authentication)</h3>
-    <p>When you choose to sign in to Al-Bader (for example, to post advertisements or manage community listings), we authenticate your account using <strong>Google Sign-In on Android, Apple Sign-In on iOS, and Firebase Authentication</strong>. We collect:</p>
+    <p>Signing in is optional. When you choose to sign in (for example, to manage your community listings), Android uses Google Sign-In and iOS uses Sign in with Apple; Firebase Authentication verifies the sign-in. The identity provider and Firebase receive the information needed to authenticate your account. We may receive and store:</p>
     <ul>
-        <li>Your basic profile name and email address</li>
-        <li>Your profile picture URL</li>
-        <li>A unique authentication user identifier (UID)</li>
+        <li>Your name and email address, when provided by the identity provider. Apple may use a private relay email if you choose that option.</li>
+        <li>Your profile photo URL, if provided by the identity provider.</li>
+        <li>A Firebase user identifier (UID) used to associate your account with your own listings and saved progress.</li>
     </ul>
-    <p><em>Note: Core spiritual features (Daily Adhkar, Quran reading, Dhikr Counter, Prayer Times, Radio) are fully accessible without creating an account.</em></p>
+    <p>We do not receive your Apple or Google account password. Core features such as Adhkar, Quran reading, Dhikr, prayer times, and radio can be used without creating an account.</p>
 
     <h3>B. User-Generated Content & Community Submissions</h3>
-    <p>If you actively submit content to our community modules, we collect the information you provide:</p>
+    <p>If you actively submit content to our community modules, we collect the information you provide to publish and manage your listing, allow interested users to contact you, prevent abuse, and respond to reports:</p>
     <ul>
         <li><strong>Job Vacancies:</strong> Job title, description, company/organization name, location, and contact phone number.</li>
         <li><strong>Matrimonial Proposals:</strong> Bride/groom profile details, age, educational background, district, family information, and guardian/contact phone numbers.</li>
         <li><strong>Buy & Sell Ads:</strong> Item title, category, price, product photos, description, and contact phone number.</li>
     </ul>
+    <p>Community listings are shown to other users. Only include contact details and personal information that you intend to publish. If you add a photo or image link to a listing, it is associated with that public listing.</p>
 
-    <h3>C. Automatically Processed Information</h3>
-    <p>To ensure app stability and optimal performance, we collect standard device metrics (such as device model, OS version, and network status). We do not collect or track Advertising Identifiers (IDFA / GAID).</p>
+    <h3>C. Madrasa Mark Sheets and Student Records</h3>
+    <p>If an authorized teacher or madrasa administrator uses cloud mark-sheet features, the app may process the madrasa name, registration number, place, administrator/teacher email, exam and class details, subject names, and student records such as names, roll numbers, gender, marks, and attendance. These records are uploaded to our Cloudflare Worker and Cloudflare R2 storage to create, sync, and review results for the authorized madrasa account. The madrasa email and password used to connect may be saved in local app storage for later sync and sent securely to our service when verification is needed. The person submitting student records is responsible for having the authority and any required consent to provide them. Please submit only information needed for the educational record.</p>
 
-    <h3>D. Alarms, Reminders & Local Preferences</h3>
-    <p>When you set up custom alarms (such as Tahajjud, Suhur, or personalized reminders) or configure prayer notification preferences, all associated settings—including alarm title, trigger times, recurrence days, and chosen audio sounds (Adhan or beep)—are stored <strong>strictly locally on your device</strong> (using local storage). This data is never transmitted to our servers, backed up to third-party clouds, or shared with external parties.</p>
+    <h3>D. Tajweed Student Enrollment (Where Available)</h3>
+    <p>On platforms that provide Tajweed student login or enrollment, we may process the student's name, mobile number, 4-digit login PIN, course enrollment/access status, and an app-installation identifier used to verify the login. The phone number and PIN are sent to our Al-Bader service to verify access; enrollment details and access status are stored in the course system. A successful student session is stored locally on that device. A website enrollment form, where offered, may also collect the name, mobile number, PIN, and payment/order reference needed to register and verify enrollment; the payment provider is shown at checkout. iOS course purchases use Apple In-App Purchase; student PIN login is not used to unlock the iOS course.</p>
+
+    <h3>E. Automatically Processed Information</h3>
+    <p>When the app connects to our services or external providers, those services may receive your IP address and standard request/network metadata needed to deliver the request and protect service reliability. The Android app also requests a public version file from GitHub to check for updates. We do not use advertising identifiers (IDFA/GAID) for cross-app advertising or tracking, and we do not sell personal information.</p>
+
+    <h3>F. Alarms, Reminders & Local Preferences</h3>
+    <p>Custom alarm settings (such as titles, trigger times, repeat days, and selected sounds), notification preferences, and downloaded media are stored on your device for app functionality. They are not uploaded to our account database. Location-based prayer-time results may be cached locally to avoid repeated requests. You can remove local data by clearing the app's storage or uninstalling the app; uninstalling also removes local alarms and downloads.</p>
 
     <h2>2. Multimedia Streaming & External Content Delivery</h2>
     <p>Al-Bader provides access to external Islamic multimedia content, including <strong>Islamic Status Videos, Audio Recitations (Adhkar, Surahs), and Live Islamic Radio Streams</strong>:</p>
     <ul>
-        <li><strong>Content Delivery Networks (CDNs):</strong> Media files are streamed securely from external cloud servers (such as Cloudflare R2 and broadcast streaming servers like Zeno.fm). When you stream or download media, standard technical communication occurs between your device and the hosting server (such as your IP address and standard HTTP request headers).</li>
+        <li><strong>Content Delivery Networks (CDNs):</strong> Media files are streamed from Cloudflare R2 and external broadcast providers such as Zeno.fm. These providers receive standard connection data, including your IP address and request headers, when you stream or download content.</li>
         <li><strong>Local Caching & Offline Storage:</strong> Audio files and status videos may be cached locally on your device storage to allow smooth playback and offline viewing. You can clear this cache at any time through the app settings or by clearing app storage.</li>
         <li><strong>No Content Profiling:</strong> We do not track, profile, or sell your listening or viewing history to any third-party advertisers.</li>
         <li><strong>Content Ownership & Integrity:</strong> All religious multimedia content, audio recordings, and status videos are curated strictly for non-commercial spiritual, educational, and inspirational purposes with full respect for copyright and content owners.</li>
@@ -124,52 +131,63 @@
     <h2>3. Device Permissions & How They Are Used</h2>
     <p>Al-Bader requests specific device permissions solely to provide features you explicitly activate:</p>
     <ul>
-        <li><strong>Location (GPS - When In Use):</strong> Used solely while using the app (Foreground / "When In Use") to calculate local prayer timetables, indicate the Qibla direction, and show nearby masjids and Ziyarath sites. <em>We do not request, require, or run background ("Always") location services.</em> When calculating prayer times for GPS-detected coordinates, your approximate latitude and longitude are transmitted securely via encrypted HTTPS to the AlAdhan API to fetch astronomical prayer times; AlAdhan processes these coordinates in real-time without storing user identity or profiling. When you search for nearby masjids, coordinates are queried against OpenStreetMap Overpass or Photon services. Your location is never tracked in the background, logged permanently, or sold to third parties.</li>
+        <li><strong>Location (When In Use):</strong> If you grant location permission and use a location-based feature, the app reads your device's latitude and longitude. The coordinates are sent over HTTPS to AlAdhan to calculate prayer times; to BigDataCloud for country/city lookup where needed; and to OpenStreetMap Overpass or Photon (Komoot) when you search for nearby masjids. These requests also expose standard connection data such as your IP address to the relevant provider. The app does not request or use background/Always location access. Location may be cached locally for prayer-time calculations. You can revoke permission in iOS Settings at any time. Each provider handles requests under its own privacy policy.</li>
         <li><strong>Camera:</strong> Used exclusively when you open the built-in QR Scanner to scan Al-Bader QR codes. The camera stream is analyzed on-device in real time and is never recorded, saved, or uploaded.</li>
-        <li><strong>Photos / Photo Library:</strong> Used only when you select and attach an image to a Buy & Sell listing or community posting. We never access your photo library without your explicit selection.</li>
-        <li><strong>Notifications & Alarms (Alerts & Sounds):</strong> Used to deliver timely prayer time alerts (Adhan / Baank), user-defined Islamic custom alarms (Tahajjud, Suhur), and daily morning/evening dhikr reminders. On iOS and Android, notifications require your explicit permission to present alerts, display banners, and play audio. Audio files (such as the Adhan or alarm tone) are bundled locally within the application and played directly on your device. You can customize audio tones, adjust notification timings, or disable notifications entirely at any time in the app settings or system settings.</li>
+        <li><strong>Photos / Photo Library:</strong> Used only after you select a photo for a community listing. The selected content and listing details are submitted with that listing and may be visible to other users. We do not access your photo library without your selection.</li>
+        <li><strong>Notifications & Alarms:</strong> Used for prayer alerts, custom alarms, and daily reminders when enabled. Notification delivery and sound are controlled by your device settings. Alarm schedules and selected sounds are stored locally on your device.</li>
     </ul>
 
     <h2>4. In-App Purchases & Subscriptions</h2>
-    <p>Al-Bader offers optional premium digital features and support subscriptions. All financial transactions are processed securely through:</p>
+    <p>Optional digital purchases are billed by the store used to make the purchase. The store processes payment details; Al-Bader does not receive or store your payment card number, bank credentials, or billing password. The app receives purchase product and transaction status needed to provide or restore the purchased access.</p>
     <ul>
-        <li><strong>Apple In-App Purchases (StoreKit)</strong> on iOS devices</li>
-        <li><strong>Google Play Billing</strong> on Android devices</li>
-        <li><strong>RevenueCat</strong> for managing digital purchase entitlements</li>
+        <li><strong>Apple In-App Purchase / StoreKit</strong> for purchases made in the iOS app.</li>
+        <li><strong>Google Play Billing</strong> for purchases made in the Android app.</li>
     </ul>
-    <p>We do not collect, process, or store your credit/debit card details, banking credentials, or billing address. All payment processing complies with Apple's and Google's strict security standards.</p>
+    <p>Purchase details are used to verify, provide, restore, and support the access you purchased. Refund requests for store purchases are handled through the relevant store.</p>
 
-    <h2>5. Advertising & Tracking</h2>
+    <h2>5. Al-Bader AI Chat</h2>
+    <p>If you use Al-Bader AI, your message and recent messages in the current conversation are sent to the Al-Bader server and processed using <strong>Cloudflare Workers AI</strong> to generate a response. The chat does not require sign-in, and the app does not save the conversation to your Firebase account; it remains in the current app session until you clear it or leave the screen. Cloudflare processes the text to provide the AI response and may handle it under its own privacy terms. Do not include passwords, financial details, health information, children's personal information, or other sensitive personal information in AI prompts.</p>
+    <p>AI responses are generated automatically and may be inaccurate. You can choose not to use this feature.</p>
+
+    <h2>6. Advertising & Tracking</h2>
     <div class="highlight-box">
         <strong>No Third-Party Advertising:</strong> Al-Bader does not display third-party banner or video advertisements and does not use advertising tracking networks. We do not sell your personal information to third parties.
     </div>
 
-    <h2>6. Third-Party Service Providers</h2>
-    <p>We utilize trusted third-party cloud infrastructure to operate the application:</p>
+    <h2>7. Third-Party Service Providers</h2>
+    <p>We share only the information needed to operate the feature you use with the relevant service provider. These providers process data under their own terms and privacy policies:</p>
     <ul>
-        <li><strong>Google Firebase (Authentication & Cloud Firestore):</strong> For secure user login and storing community posts.</li>
-        <li><strong>Apple Sign-In:</strong> For optional account authentication on iOS.</li>
-        <li><strong>OpenStreetMap Overpass and Photon:</strong> For nearby masjid search results when you request them.</li>
-        <li><strong>RevenueCat:</strong> For verifying digital receipt entitlements.</li>
-        <li><strong>Cloudflare R2 & Workers:</strong> For high-performance media delivery and video streaming.</li>
-        <li><strong>AlAdhan API (Islamic Network):</strong> For astronomical prayer time calculations. Receives latitude and longitude coordinates over HTTPS to return accurate prayer schedules. No user accounts, personal identities, or tracking tokens are sent.</li>
+        <li><strong>Google Firebase Authentication and Cloud Firestore:</strong> For optional sign-in, account-linked community listings, and signed-in streak synchronization.</li>
+        <li><strong>Google Sign-In and Apple Sign-In:</strong> Identity providers used when you choose to sign in on a supported platform.</li>
+        <li><strong>Apple App Store and Google Play:</strong> For processing and verifying in-app purchases on their respective platforms.</li>
+        <li><strong>Cloudflare Workers, Workers AI, and R2:</strong> To operate app APIs, process Al-Bader AI chat prompts, store authorized cloud mark-sheet records, and deliver media files.</li>
+        <li><strong>GitHub:</strong> To deliver some public study files and the Android app version-check file when the app requests them.</li>
+        <li><strong>PhonePe or Razorpay:</strong> For website course payments when one of these providers is shown at checkout. The provider processes payment details; we receive the order/payment status and references needed to confirm enrollment.</li>
+        <li><strong>WhatsApp and external websites:</strong> Only when you choose to open a support or external link. The information you send there is handled by that provider under its own privacy policy.</li>
+        <li><strong>AlAdhan API:</strong> For prayer-time calculations using the coordinates you provide through the location feature.</li>
+        <li><strong>BigDataCloud:</strong> For country/city lookup from coordinates when needed by location-based prayer features.</li>
+        <li><strong>OpenStreetMap Overpass and Photon (Komoot):</strong> For nearby masjid search results when you request them.</li>
+        <li><strong>Zeno.fm and other media hosts:</strong> To stream radio or other media that you choose to play.</li>
     </ul>
 
-    <h2>7. Account & Data Deletion (User Rights)</h2>
+    <h2>8. Data Retention, Account & Data Deletion</h2>
     <p>We believe in giving you complete control over your personal data:</p>
     <ul>
-        <li><strong>Self-Service Account Deletion:</strong> You can permanently delete your account and all associated submissions directly inside the application by navigating to <strong>Profile / Account Settings &rarr; Delete Account</strong>.</li>
-        <li><strong>Instant Data Removal:</strong> Deleting your account immediately removes your profile, active listings, and associated data from our active Firebase database.</li>
-        <li><strong>Manual Request:</strong> You may also request complete removal of any listing or data by emailing us at <a href="mailto:salahudheen9745@gmail.com">salahudheen9745@gmail.com</a>.</li>
+        <li><strong>Self-Service Account Deletion:</strong> You can permanently delete your sign-in account and its associated Buy &amp; Sell, Job Vacancies, and Matrimony submissions inside the application by navigating to <strong>Profile / Account Settings &rarr; Delete Account</strong>.</li>
+        <li><strong>What account deletion removes:</strong> The in-app deletion flow deletes your Firebase Authentication account, your Buy &amp; Sell, Job Vacancies, and Matrimony listings, and your signed-in streak record from the active Firebase database.</li>
+        <li><strong>Retention:</strong> We keep account and listing information while needed to provide the service. Community listings are generally assigned an expiry period (typically 30 days) and may remain visible until you delete them, the app's cleanup process removes them after expiry, or your account is deleted. Limited records may be retained where required for security, legal, or payment obligations. Service providers may retain request or backup data under their own retention policies.</li>
+        <li><strong>Separate course and madrasa records:</strong> Tajweed enrollment/student records and cloud mark-sheet records are maintained separately from the general Firebase sign-in account. Deleting that sign-in account does not automatically delete those separate records. Contact us at the address below to request their deletion, or use the authorized controls available in the relevant course/madrasa feature.</li>
+        <li><strong>Local data:</strong> Account deletion does not remove local-only settings, alarms, downloads, or caches from your device. Remove those in the app/device settings or uninstall the app.</li>
+        <li><strong>Manual request:</strong> For help deleting a listing or personal data, email <a href="mailto:salahudheen9745@gmail.com">salahudheen9745@gmail.com</a>. We will verify the request and respond as soon as reasonably possible.</li>
     </ul>
 
-    <h2>8. Children's Privacy</h2>
-    <p>Al-Bader provides religious, spiritual, and educational content suitable for general audiences of all ages. We do not knowingly collect personal identifiable information from children under the age of 13. If you believe a child has provided us with personal information without parental consent, please contact us immediately.</p>
+    <h2>9. Children's Privacy</h2>
+    <p>Al-Bader provides religious, spiritual, and educational content for a general audience. Children should not create an account or submit personal information without the required parent or guardian involvement. Teachers or madrasa administrators may enter student records, including records about minors, only when authorized and after obtaining any consent required by applicable law. If you believe a child's information was submitted without proper authorization, contact us so we can review the request.</p>
 
-    <h2>9. Changes to This Privacy Policy</h2>
+    <h2>10. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time to reflect feature updates or regulatory changes. The latest version will always be accessible via this URL with the updated revision date.</p>
 
-    <h2>10. Contact Us</h2>
+    <h2>11. Contact Us</h2>
     <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or your data, please contact our support team:</p>
     <p>
         <strong>Al-Bader Development Team</strong><br>
